@@ -139,6 +139,8 @@
 </template>
 
 <script setup>
+    import { useAuthStore } from '~/stores/authStore';
+
     const schema = {
         name: "required|min:2|max:20",
         email: "required|email",
@@ -161,4 +163,25 @@
     const getAge = computed(() => {
         return new Date().getFullYear() - new Date(inputData.dob).getFullYear();
     });
+
+    const router = useRouter();
+    const authStore = useAuthStore();
+
+    let showLoading = ref(false);
+
+    async function handleRegister() {
+        showLoading.value = true;
+
+        inputData.age = getAge;
+        try {
+            await authStore.register(inputData);
+
+            router.push("/login");
+        }
+        catch (error) {
+            alert("Error! " + error);
+        }
+
+        showLoading.value = false;
+    }
 </script>

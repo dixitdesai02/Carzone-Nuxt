@@ -9,20 +9,20 @@ export default defineNuxtConfig({
     [
       '@pinia/nuxt',
       {
-        autoImports: ['defineStore', 'acceptHMRUpdate'],
+        autoImports: ['defineStore'],
       },
     ],
   ],
   css: [
     '@/assets/css/main.css'
   ],
-  imports: {
-    dirs: ['stores'],
-  },
   router: {
     options: {
       linkActiveClass: 'active',
       linkExactActiveClass: 'exact-active'
     }
+  },
+  app: {
+    pageTransition: { name: 'page' }
   }
 })

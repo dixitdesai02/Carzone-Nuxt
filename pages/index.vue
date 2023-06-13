@@ -35,8 +35,6 @@
     const carStore = useCarStore();
     const { cars } = storeToRefs(carStore);
 
-    console.log("Cars", cars.value);
-
     async function fetchData() {
         await carStore.fetchCars();
         isLoading.value = false;

@@ -54,28 +54,27 @@
 
     const router = useRouter();
     const authStore = useAuthStore();
+    
     async function handleLogin() {
-        console.log("LOGIn");
-        showLoading = true;
-    try {
-        showLoading = true;
+        try {
+            showLoading = true;
 
-        await authStore.getAllUsers();
+            await authStore.getAllUsers();
 
-        let matchedUser = authStore.users.find((user) => ( user.email === inputData.email && user.password === inputData.password ));
+            let matchedUser = authStore.users.find((user) => ( user.email === inputData.email && user.password === inputData.password ));
 
-        if (matchedUser) {
-            authStore.login(matchedUser);
+            if (matchedUser) {
+                authStore.login(matchedUser);
+            }
+            else {
+                throw new Error("Invalid Credentials!");
+            }
+
+            router.push("/");
         }
-        else {
-            throw new Error("Invalid Credentials!");
-        }
-
-        router.push("/");
-    }
-    catch(error) {
-        alert(error);
-    }    
+        catch(error) {
+            alert(error);
+        }    
         showLoading = false;
     }
 

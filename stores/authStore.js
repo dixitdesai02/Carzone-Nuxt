@@ -25,7 +25,6 @@ export const useAuthStore = defineStore('authStore', {
         async getAllUsers() {
             try {
                 const { data } = await useFetch(`${this.baseURL}/resource/users`);
-                console.log(data);
                 this.users = data.value.data;
             }
             catch (error) {
