@@ -1,7 +1,7 @@
 export const useAuthStore = defineStore('authStore', {
     state: () => {
         return {
-            baseURL: import.meta.env.VITE_AUTH_API_BASEURL,
+            baseURL: useRuntimeConfig().VITE_AUTH_API_BASEURL,
             users: [],
             isLoggedIn: false,
             loggedInUser: null
