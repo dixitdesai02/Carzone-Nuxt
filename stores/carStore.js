@@ -15,11 +15,11 @@ export const useCarStore = defineStore('carStore', {
     actions: {
         async fetchCars() {
             try {
-                const { data } = await useFetch(`${this.baseURL}`)
-                this.cars = data.value.data;
+                const data = await $fetch(`${this.baseURL}`)
+                this.cars = data.data;
             }
             catch(error) {
-                // alert("Error! Could not fetch Cars Data!" + error);
+                alert("Error! Could not fetch Cars Data!" + error);
             }
         },
 
@@ -39,11 +39,12 @@ export const useCarStore = defineStore('carStore', {
 
         async editCar(id, carData) {
             try {
-                await useFetch(`${this.baseURL}/${id}`, {
+                const {data} = await useFetch(`${this.baseURL}/${id}`, {
                     headers: { "Content-type": "application/json" },
                     method: 'PUT',
                     body: carData
                 });
+                console.log("data", data);
                 await this.fetchCars();
             }
             catch(error) {

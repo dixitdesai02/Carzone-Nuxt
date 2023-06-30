@@ -52,9 +52,9 @@
                         <label for="image" class="absolute duration-300 top-3 origin-0 text-gray-500">Image URL*</label>
                         <ErrorMessage class="text-red-600 text-sm" name="image"/>
                     </div>
-    
 
-                    <div class="relative z-0 w-full mb-5">
+
+                    <div class="relative z-0 w-full mb-3">
                         <Field
                         type="number"
                         id="price"
@@ -67,7 +67,11 @@
                         <label for="price" class="absolute duration-300 top-3 left-5 origin-0 text-gray-500">Car Price*</label>
                         <ErrorMessage class="text-red-600 text-sm" name="price"/>
                     </div>
-    
+            
+                    <div class="text-slate-600">
+                        <small>* indicates required field</small>
+                    </div>
+
                     <div class="mt-4 flex justify-end">
                         <button v-if="typeOfModal === 'add' && !showLoading" class="px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Save</button>
                         <button v-else-if="!showLoading" class="px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Update</button>
@@ -86,7 +90,6 @@
 
 
 <script setup>
-    import { ref, reactive, watch } from 'vue';
     import Swal from 'sweetalert2';
     import { useCarStore } from '../stores/carStore';
     import { useModalStore } from '../stores/modalStore';

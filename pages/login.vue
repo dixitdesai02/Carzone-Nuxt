@@ -16,7 +16,7 @@
                     <label for="email" class="absolute duration-300 top-3 origin-0 text-gray-500">Email Address*</label>
                     <ErrorMessage class="text-red-600 text-sm" name="email"/>
                 </div>
-                <div class="relative z-0 w-full mb-5">
+                <div class="relative z-0 w-full mb-2">
                     <Field
                     type="password"
                     id="password"
@@ -28,16 +28,27 @@
                     <label for="password" class="absolute duration-300 top-3 origin-0 text-gray-500">Password*</label>
                     <ErrorMessage class="text-red-600 text-sm" name="password"/>
                 </div>
-            
+
+                <div class="text-slate-500 flex justify-end">
+                    <small>* indicates required field</small>
+                </div>
+
                 <button type="submit" v-show="!showLoading" class="my-1 z-50 px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Login</button>
                 <img v-show="showLoading" class="bg-slate-600 rounded-lg px-3 w-16 h-11 object-contain" src="images/spinner.gif" alt="Loading" />
 
             </Form>
         </div>
+        <div class="text-center text-slate-700 text-sm mt-3">
+            New to CarZone? <NuxtLink to="/register" class="text-sky-700 cursor-pointer hover:underline">Register</NuxtLink>
+        </div>
     </div>
 </template>
 
 <script setup>
+    useHead({
+        title: "Login | CarZone"
+    });
+
     import { useAuthStore } from '@/stores/authStore';
     
     const schema = {

@@ -22,6 +22,10 @@
 </template>
 
 <script setup>
+useHead({
+    title: "Car | CarZone"
+});
+
 import { useCarStore } from '@/stores/carStore';
 
 let isLoading = ref(true);
@@ -33,14 +37,19 @@ const route = useRoute();
 async function fetchData() {
     await carStore.fetchCars();
     carDetails = carStore.carDetailsById(route.params.id);
+
+    if (!carDetails) {
+        alert("Car Not Found!!");
+        router.back();
+    }
     isLoading.value = false;
 }
-fetchData()
+fetchData();
 
 const router = useRouter();
 
 function goBack() {
-    router.go(-1);
+    router.back();
 }
 
 </script>

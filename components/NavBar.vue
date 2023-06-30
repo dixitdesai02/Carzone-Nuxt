@@ -93,7 +93,7 @@ function handleLogout() {
         }
     
         .change .line-1 {
-            transform: rotateZ(-45deg) translate(-8px, 8px);   
+            transform: rotateZ(315deg) translate(-8px, 8px);   
         }
     
         .change .line-2 {
@@ -101,7 +101,7 @@ function handleLogout() {
         }
     
         .change .line-3 {
-            transform: rotateZ(45deg) translate(-8px, -9px);
+            transform: rotateZ(-315deg) translate(-8px, -9px);
         }
     }
 </style>

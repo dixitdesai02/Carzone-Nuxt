@@ -12,20 +12,23 @@
             </section>
             <section  class="pt-3 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center relative">
                 <transition-group name="fade" appear>
-                    <GalleryCard @show-price="showPrice" :style="{transitionDelay: `${index*0.15}s`}" v-for="(car, index) in cars" :car="car" :key="car.id"/>
+                    <GalleryCard :style="{transitionDelay: `${index*0.15}s`}" v-for="(car, index) in cars" :car="car" :key="car.id"/>
                 </transition-group>
             </section>
             <ModalForm />
         </main>
-        <div>
-            <Loader v-if="isLoading"/>
-        </div>
+        <ClientOnly>
+            <Loader v-if="isLoading" />
+        </ClientOnly>
     </section>
 </template>
 
 
 <script setup>
-    import Swal from 'sweetalert2';
+    useHead({
+        title: "CarZone"
+    });
+
     import { storeToRefs } from "pinia";
     import { useCarStore } from "../stores/carStore";
     import { useModalStore } from "../stores/modalStore";
@@ -50,15 +53,6 @@
         showModal.value = true;
         typeOfModal.value = 'add';
         editData.value = {}
-    }
-
-    function showPrice(title, price) {
-        Swal.fire({
-            title: title,
-            html: `Price:<strong> $${price} /-</strong>`, 
-            confirmButtonText: "Okay!",
-            confirmButtonColor: "#475569"
-        })
     }
 
 </script>
