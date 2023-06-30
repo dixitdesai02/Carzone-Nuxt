@@ -19,7 +19,7 @@ export const useCarStore = defineStore('carStore', {
                 this.cars = data.data;
             }
             catch(error) {
-                alert("Error! Could not fetch Cars Data!" + error);
+                throw new Error("Error! Could not fetch Cars Data!" + error);
             }
         },
 
