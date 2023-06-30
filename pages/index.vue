@@ -8,7 +8,7 @@
             </div>
             <section v-if="cars.length === 0" class="py-5 flex flex-col">
                 <h2 class="text-4xl font-semibold text-slate-700 text-center">No Cars Found!</h2>
-                <NuxtImg class="w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto" src="images/no-cars.webp" alt="No Cars" />
+                <NuxtImg class="w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto" src="/images/no-cars.webp" alt="No Cars" />
             </section>
             <section  class="pt-3 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center relative">
                 <transition-group name="fade" appear>

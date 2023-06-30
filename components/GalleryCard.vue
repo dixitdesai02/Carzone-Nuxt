@@ -15,8 +15,8 @@
                 </button>
 
                 <div class="icon-wrapper flex justify-between w-[4em] gap-2">
-                    <img @click="showEditForm" src="images/edit.svg" alt="Edit" class="w-5 h-6 object-contain cursor-pointer opacity-90"/>
-                    <img @click="handleDelete" src="images/delete.svg" alt="delete" class="w-6 h-6 cursor-pointer object-contain opacity-80">
+                    <img @click="showEditForm" src="/images/edit.svg" alt="Edit" class="w-5 h-6 object-contain cursor-pointer opacity-90"/>
+                    <img @click="handleDelete" src="/images/delete.svg" alt="delete" class="w-6 h-6 cursor-pointer object-contain opacity-80">
                 </div>
             </div>
         </div>
