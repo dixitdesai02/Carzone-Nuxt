@@ -2,7 +2,7 @@ export const useCarStore = defineStore('carStore', {
     state: () => {
         return {
             cars: [],
-            baseURL: useRuntimeConfig().VITE_CARS_API_BASEURL
+            baseURL: useRuntimeConfig().public.VITE_CARS_API_BASEURL
         }
     },
 

@@ -26,7 +26,9 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page' }
   },
   runtimeConfig: {
-    VITE_CARS_API_BASEURL:"https://testapi.io/api/dartya/resource/cardata",
-    VITE_AUTH_API_BASEURL:"https://testapi.io/api/dartya"
+    public: {
+      VITE_CARS_API_BASEURL: process.env.VITE_CARS_API_BASEURL,
+      VITE_AUTH_API_BASEURL: process.env.VITE_AUTH_API_BASEURL
+    }
   }
 })

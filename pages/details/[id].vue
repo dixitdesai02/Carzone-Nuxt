@@ -3,7 +3,7 @@
         <Loader v-show="isLoading"/>
         <section v-show="!isLoading" class="w-5/6 max-w-6xl m-auto">
             <div class="back mt-5 cursor-pointer" @click="goBack">
-                <NuxtImg src="/images/back.svg" alt="back" class="w-10 h-10 object-cover" />
+                <NuxtImg src="../assets/images/back.svg" alt="back" class="w-10 h-10 object-cover" />
             </div>
             <transition name="fade">
                 <div v-show="!isLoading" class="wrapper flex flex-col md:flex-row m-auto items-center bg-white p-5 rounded shadow-lg mt-10">

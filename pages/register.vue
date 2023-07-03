@@ -136,7 +136,7 @@
                 </div>
 
                 <button type="submit" v-show="!showLoading" class="my-1 px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Register</button>
-                <img v-show="showLoading" class="bg-slate-600 rounded-lg px-3 w-16 h-11 object-contain" src="/images/spinner.gif" alt="Loading" />
+                <img v-show="showLoading" class="bg-slate-600 rounded-lg px-3 w-16 h-11 object-contain" src="../assets/images/spinner.gif" alt="Loading" />
             </Form>
         </div>
 
