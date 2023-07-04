@@ -9,4 +9,6 @@
 
   useAuthStore().isLoggedIn = useSessionStorage('token', null).value && useSessionStorage('isLoggedIn', false).value;
   useAuthStore().loggedInUser = useSessionStorage('loggedInUser', null).value;
+
+  useRuntimeConfig();
 </script>
