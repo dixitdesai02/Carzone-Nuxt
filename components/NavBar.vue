@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="flex flex-col items-center md:flex-row md:gap-6 font-semibold text-lg text-slate-300">
-                    <h3 v-if="isLoggedIn" class="flex items-center gap-2 cursor-pointer text-base bg-slate-500 px-4 py-1 rounded-full"><NuxtImg class="w-5 object-contain" src="../assets/images/user.png"/>{{ loggedInUser }}</h3>
+                    <h3 v-if="isLoggedIn" class="flex items-center gap-2 cursor-pointer text-base bg-slate-500 px-4 py-1 rounded-full"><img class="w-5 object-contain" src="/assets/images/user.png"/>{{ loggedInUser }}</h3>
                     <NuxtLink to="/" v-if="isLoggedIn" class="hover:text-white hover:underline" @click="handleBtnclick">Home</NuxtLink>
                     <NuxtLink to="/login" v-if="!isLoggedIn" class="hover:text-white hover:underline" @click="handleBtnclick">Login</NuxtLink>
                     <NuxtLink to="/register" v-if="!isLoggedIn" class="hover:text-white hover:underline" @click="handleBtnclick">Register</NuxtLink>

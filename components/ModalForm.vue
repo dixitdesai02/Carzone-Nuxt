@@ -75,7 +75,7 @@
                     <div class="mt-4 flex justify-end">
                         <button v-if="typeOfModal === 'add' && !showLoading" class="px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Save</button>
                         <button v-else-if="!showLoading" class="px-5 py-2 text-md font-bold text-center text-white bg-slate-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-slate-300">Update</button>
-                        <img v-show="showLoading" class="bg-slate-600 rounded-lg px-3 w-16 object-contain" src="../assets/images/spinner.gif" alt="Loading" />
+                        <img v-show="showLoading" class="bg-slate-600 rounded-lg px-3 w-16 object-contain" src="/assets/images/spinner.gif" alt="Loading" />
                         <button type="reset" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 ml-2 rounded" @click="closeModal">Cancel</button>
                     </div>
     

@@ -15,6 +15,7 @@ export const useCarStore = defineStore('carStore', {
     actions: {
         async fetchCars() {
             try {
+                console.log(this.baseURL);
                 const data = await $fetch(`${this.baseURL}`)
                 this.cars = data.data;
             }
